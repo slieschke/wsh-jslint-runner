@@ -23,4 +23,4 @@ To run JSHint use the same configuration but replace all instances of JSLint wit
 [2]: http://jshint.com
 [3]: https://raw.github.com/douglascrockford/JSLint/master/jslint.js
 [4]: https://raw.github.com/jshint/jshint/master/jshint.js
-[4]: http://www.editplus.com
+[5]: http://www.editplus.com
