@@ -1,7 +1,9 @@
+/*global ActiveXObject: false, JSLINT: false, WScript: false*/
 (function () {
-	var filename, i,
-		fso = new ActiveXObject('Scripting.FileSystemObject');
-		exit = function(msg) {
+	'use strict';
+	var e, filename, i,
+		fso = new ActiveXObject('Scripting.FileSystemObject'),
+		exit = function (msg) {
 			WScript.StdOut.WriteLine(msg);
 			WScript.Quit();
 		};
@@ -13,7 +15,7 @@
 		exit('File "' + filename + '" not found.');
 	}
 	if (!JSLINT(fso.OpenTextFile(filename, 1, false, -2).ReadAll())) {
-		for (i = 0; i < JSLINT.errors.length; i++) {
+		for (i = 0; i < JSLINT.errors.length; i = i + 1) {
 			e = JSLINT.errors[i];
 			if (e) {
 				WScript.StdOut.WriteLine('JSLint at line ' + e.line + ' character ' + e.character + ': ' + e.reason);
