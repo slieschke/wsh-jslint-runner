@@ -17,6 +17,8 @@ This enables running JSLint as an [EditPlus][5] user tool with the following con
     * Line: _Tagged Expression 1_
     * Column: _Tagged Expression 2_
 
+You can configure the checks that are made by creating an `options.js` file in the same directory containing a JSON object of [JSLint options](http://www.jslint.com/lint.html#options).
+
 To run JSHint use the same configuration but replace all instances of JSLint with JSHint.
 
 [1]: http://www.jslint.com
