@@ -5,13 +5,13 @@
 	var filename, i, e,
 		fso = new ActiveXObject('Scripting.FileSystemObject'),
 		options = {},
-		tool = this.JSLINT || this.JSHINT,
+		tool = this.JSLINT,
 		exit = function (msg) {
 			WScript.StdOut.WriteLine(msg);
 			WScript.Quit();
 		};
 	if (!tool) {
-		exit('jslint.js or jshint.js not found.');
+		exit('jslint.js not found.');
 	}
 	if (WScript.Arguments.length === 0) {
 		exit('No filename provided.');
@@ -28,7 +28,7 @@
 		for (i = 0; i < tool.errors.length; i = i + 1) {
 			e = tool.errors[i];
 			if (e) {
-				WScript.StdOut.WriteLine((tool === this.JSLINT ? 'JSLint' : 'JSHint') + ' at line ' + e.line + ' character ' + e.character + ': ' + e.reason);
+				WScript.StdOut.WriteLine('JSLint at line ' + e.line + ' character ' + e.character + ': ' + e.reason);
 				WScript.StdOut.WriteLine((e.evidence || '').replace(/^\s*(\S*(\s+\S+)*)\s*$/, '$1')); // the regex trims leading/trailing whitespace
 				WScript.StdOut.WriteLine();
 			}
